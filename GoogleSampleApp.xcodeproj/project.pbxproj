@@ -15,6 +15,8 @@
 		4B2EA88E1D85838000DAD18C /* GoogleSampleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2EA88D1D85838000DAD18C /* GoogleSampleAppTests.swift */; };
 		4B2EA8991D85838000DAD18C /* GoogleSampleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2EA8981D85838000DAD18C /* GoogleSampleAppUITests.swift */; };
 		4B2EA8A71D85850C00DAD18C /* keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2EA8A61D85850C00DAD18C /* keys.swift */; };
+		4B2EA8A91D858F9F00DAD18C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B2EA8A81D858F9F00DAD18C /* GoogleService-Info.plist */; };
+		4B2EA8AB1D8592A100DAD18C /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2EA8AA1D8592A100DAD18C /* AuthService.swift */; };
 		725EDC370DEC774A51B85C1F /* Pods_GoogleSampleAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83A05CB2353F34443EA852D8 /* Pods_GoogleSampleAppUITests.framework */; };
 		74F30DA8E3CED4F8300649D8 /* Pods_GoogleSampleAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F8D9029DDFADF3732E8102B /* Pods_GoogleSampleAppTests.framework */; };
 		8B7F17C9DA1A2AED2537517B /* Pods_GoogleSampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75FF3EEE18402A442D3175C0 /* Pods_GoogleSampleApp.framework */; };
@@ -53,6 +55,8 @@
 		4B2EA8981D85838000DAD18C /* GoogleSampleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSampleAppUITests.swift; sourceTree = "<group>"; };
 		4B2EA89A1D85838000DAD18C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B2EA8A61D85850C00DAD18C /* keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = keys.swift; sourceTree = "<group>"; };
+		4B2EA8A81D858F9F00DAD18C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4B2EA8AA1D8592A100DAD18C /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		59F0DA12554BFDB57E18FE6C /* Pods-GoogleSampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleSampleApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoogleSampleApp/Pods-GoogleSampleApp.debug.xcconfig"; sourceTree = "<group>"; };
 		75FF3EEE18402A442D3175C0 /* Pods_GoogleSampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoogleSampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83A05CB2353F34443EA852D8 /* Pods_GoogleSampleAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoogleSampleAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,10 +122,12 @@
 			children = (
 				4B2EA8781D85838000DAD18C /* AppDelegate.swift */,
 				4B2EA87A1D85838000DAD18C /* ViewController.swift */,
+				4B2EA8AA1D8592A100DAD18C /* AuthService.swift */,
 				4B2EA87C1D85838000DAD18C /* Main.storyboard */,
 				4B2EA87F1D85838000DAD18C /* Assets.xcassets */,
 				4B2EA8811D85838000DAD18C /* LaunchScreen.storyboard */,
 				4B2EA8841D85838000DAD18C /* Info.plist */,
+				4B2EA8A81D858F9F00DAD18C /* GoogleService-Info.plist */,
 				4B2EA8A61D85850C00DAD18C /* keys.swift */,
 			);
 			path = GoogleSampleApp;
@@ -282,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B2EA8831D85838000DAD18C /* LaunchScreen.storyboard in Resources */,
+				4B2EA8A91D858F9F00DAD18C /* GoogleService-Info.plist in Resources */,
 				4B2EA8801D85838000DAD18C /* Assets.xcassets in Resources */,
 				4B2EA87E1D85838000DAD18C /* Main.storyboard in Resources */,
 			);
@@ -449,6 +456,7 @@
 				4B2EA87B1D85838000DAD18C /* ViewController.swift in Sources */,
 				4B2EA8A71D85850C00DAD18C /* keys.swift in Sources */,
 				4B2EA8791D85838000DAD18C /* AppDelegate.swift in Sources */,
+				4B2EA8AB1D8592A100DAD18C /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
