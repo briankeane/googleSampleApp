@@ -16,7 +16,7 @@
 		4B2EA8991D85838000DAD18C /* GoogleSampleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2EA8981D85838000DAD18C /* GoogleSampleAppUITests.swift */; };
 		4B2EA8A71D85850C00DAD18C /* keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2EA8A61D85850C00DAD18C /* keys.swift */; };
 		4B2EA8A91D858F9F00DAD18C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B2EA8A81D858F9F00DAD18C /* GoogleService-Info.plist */; };
-		4B2EA8AB1D8592A100DAD18C /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2EA8AA1D8592A100DAD18C /* AuthService.swift */; };
+		4B2EA8AC1D85965B00DAD18C /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2EA8AA1D8592A100DAD18C /* AuthService.swift */; };
 		725EDC370DEC774A51B85C1F /* Pods_GoogleSampleAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83A05CB2353F34443EA852D8 /* Pods_GoogleSampleAppUITests.framework */; };
 		74F30DA8E3CED4F8300649D8 /* Pods_GoogleSampleAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F8D9029DDFADF3732E8102B /* Pods_GoogleSampleAppTests.framework */; };
 		8B7F17C9DA1A2AED2537517B /* Pods_GoogleSampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75FF3EEE18402A442D3175C0 /* Pods_GoogleSampleApp.framework */; };
@@ -456,7 +456,7 @@
 				4B2EA87B1D85838000DAD18C /* ViewController.swift in Sources */,
 				4B2EA8A71D85850C00DAD18C /* keys.swift in Sources */,
 				4B2EA8791D85838000DAD18C /* AppDelegate.swift in Sources */,
-				4B2EA8AB1D8592A100DAD18C /* AuthService.swift in Sources */,
+				4B2EA8AC1D85965B00DAD18C /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
