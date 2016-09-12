@@ -43,53 +43,24 @@ class AuthServiceClass
                             {
                             case .Success(let JSON):
                                 print("JSON")
-                                if let responseDict = JSON.objectForKey("feed") as? NSDictionary
+                                if let emails = self.extractEmailsFromJSON(JSON)
                                 {
-                                    if let entries = responseDict["entry"] as? Array<Dictionary<String,AnyObject>>
+                                    if (self.moreGoogleCallsRequired(JSON))
                                     {
-                                        var emails:Array<String> = Array()
-                                        for entry in entries
+                                        self.getChunkOfGoogleEmails(numberOfContacts, startIndex: startIndex+numberOfContacts)
+                                        .then
                                         {
-                                            if let userContacts = entry as? Dictionary<String,AnyObject>
-                                            {
-                                                if let userEmails = userContacts["gd$email"] as? Array<Dictionary<String,AnyObject>>
-                                                {
-                                                    for userEmail in userEmails
-                                                    {
-                                                        if let address = userEmail["address"] as? String
-                                                        {
-                                                            emails.append(address)
-                                                        }
-                                                    }
-                                                }
-                                                
-                                            }
+                                            (newEmails) -> Void in
+                                            fulfill(emails + newEmails)
                                         }
-                                        print("got \(emails.count) emails!")
-                                        if let links = responseDict.objectForKey("link") as? Array<Dictionary<String,AnyObject>>
-                                        {
-                                            for link in links
-                                            {
-                                                if ((link["rel"] as? String) == "next")
-                                                {
-                                                    self.getChunkOfGoogleEmails(numberOfContacts, startIndex: startIndex+numberOfContacts)
-                                                    .then
-                                                    {
-                                                        (newEmails) -> Void in
-                                                        fulfill(emails + newEmails)
-                                                    }
-                                                    return
-                                                }
-                                            }
-                                        }
+                                        return
+                                    }
+                                    else
+                                    {
                                         fulfill(emails)
                                     }
 
                                 }
-                                
-                                
-                                
-                                
                             default: break
                             }
                     }
@@ -100,6 +71,56 @@ class AuthServiceClass
                 }
         }
     }
+
+    func moreGoogleCallsRequired(JSON:AnyObject) -> Bool
+    {
+        if let responseDict = JSON.objectForKey("feed") as? NSDictionary
+        {
+            if let links = responseDict.objectForKey("link") as? Array<Dictionary<String,AnyObject>>
+            {
+                for link in links
+                {
+                    if ((link["rel"] as? String) == "next")
+                    {
+                        return true
+                    }
+                }
+            }
+ 
+        }
+        return false
+    }
+
+    func extractEmailsFromJSON(JSON:AnyObject) -> Array<String>?
+    {
+        var emails:Array<String> = Array()
+        if let responseDict = JSON.objectForKey("feed") as? NSDictionary
+        {
+            if let entries = responseDict["entry"] as? Array<Dictionary<String,AnyObject>>
+            {
+                for entry in entries
+                {
+                    if let userContacts = entry as? Dictionary<String,AnyObject>
+                    {
+                        if let userEmails = userContacts["gd$email"] as? Array<Dictionary<String,AnyObject>>
+                        {
+                            for userEmail in userEmails
+                            {
+                                if let address = userEmail["address"] as? String
+                                {
+                                    emails.append(address)
+                                }
+                            }
+                        }
+                        
+                    }
+                }
+                return emails
+            }
+        }
+        return nil
+    }
+
 }
 
 let AuthServiceInstance = AuthServiceClass()

@@ -28,6 +28,7 @@ class ViewController: UIViewController, GIDSignInUIDelegate {
     func setupGoogleSignIn()
     {
         GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().signInSilently()
     }
 
     override func didReceiveMemoryWarning() {
